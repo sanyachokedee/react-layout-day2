@@ -1,12 +1,17 @@
 import MainLayout from './components/layouts/MainLayout'
 import DocumentTitle from 'react-document-title'
+import { WebView } from 'react-native-webview'; 
 
 function About() {
   return (
     <MainLayout>
-        <DocumentTitle title='เกี่ยวกับเรา' />
+      <DocumentTitle title='เกี่ยวกับเรา' />
+      <WebView>
+        originWhitelist={['*']} 
+        source={{ html: ' <iframe width={100%} height={600} src="https://www.youtube.com/embed/SwvAGEGRcoY" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />' }}
+      </WebView>
 
-      <iframe title="about" width={'100%'} height={600} src="https://www.youtube.com/embed/SwvAGEGRcoY" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+      {/* <iframe width={'100%'} height={600} src="https://www.youtube.com/embed/SwvAGEGRcoY" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
 
         <div className="container mb-5">
           <h1 className="my-4">เกี่ยวกับเรา</h1>
